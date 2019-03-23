@@ -1,0 +1,6 @@
+#tomatoPic {
+  position: absolute;
+  left: calc(50% - 250px);
+  top: 25%;
+  width: 500px;
+}
