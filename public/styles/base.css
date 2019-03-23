@@ -4,3 +4,9 @@
   top: 25%;
   width: 500px;
 }
+
+.clockFace {
+  position: absolute;
+  top: calc(25% + 220px);
+  left: 50%;
+}
