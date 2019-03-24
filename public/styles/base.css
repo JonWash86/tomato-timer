@@ -6,7 +6,8 @@
 }
 
 .clockFace {
+  font-size: 55px;
   position: absolute;
-  top: calc(25% + 220px);
-  left: 50%;
+  top: calc(25% + 200px);
+  left: calc(50% - 55px);
 }
