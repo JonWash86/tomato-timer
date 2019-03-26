@@ -17,10 +17,20 @@ const runCountdown = (minutes_to_count) => {
   }
 }
 
-const CountdownClock = () => {
-  return(
-    <div>Clock Goes here!</div>
-  )
+class CountdownClock extends React.Component {
+  state = {timerTime: 250};
+
+  componentDidMount(){
+    setInterval(() => {
+      var thisTime = (this.state.timerTime--);
+      this.setState({ time: thisTime})
+    }, 1000)
+  }
+  render(){
+    return(
+      <div>{this.state.timerTime}</div>
+    )
+  }
 };
 
 export default CountdownClock;
