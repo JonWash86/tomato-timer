@@ -17,8 +17,10 @@ const runCountdown = (minutes_to_count) => {
   }
 }
 
-const CountdownClock = (props) => {
+const CountdownClock = () => {
   return(
-    <div></div>
+    <div>Clock Goes here!</div>
   )
-}
+};
+
+export default CountdownClock;

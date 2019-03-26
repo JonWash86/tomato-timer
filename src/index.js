@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import CountdownClock from './CountdownClock';
 
 class App extends React.Component {
   state = {time: ''};
@@ -11,7 +12,8 @@ class App extends React.Component {
   }
 
   render(){
-    return(<div className="clockFace">25:00 {this.state.time}</div>);
+    return(
+  <CountdownClock />);
   }
 }
 
