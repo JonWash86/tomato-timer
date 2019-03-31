@@ -34,7 +34,7 @@ class CountdownClock extends React.Component {
   }
   render(){
     return(
-      <div>{this.state.timerTime}</div>
+      <div className="clockFace">{this.state.timerTime}</div>
     )
   }
 };
