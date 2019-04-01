@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import CountdownClock from './CountdownClock';
 
 class App extends React.Component {
-  state = {time: ''};
+  state = {time: '5'};
 
   componentDidMount() {
     setInterval(() => {
@@ -13,7 +13,7 @@ class App extends React.Component {
 
   render(){
     return(
-  <CountdownClock />);
+  <CountdownClock time={this.state.time}/>);
   }
 }
 

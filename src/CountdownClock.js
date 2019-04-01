@@ -6,7 +6,7 @@ const runCountdown = (minutes_to_count) => {
   var mins = minutes_to_count;
   function tick(){
     var current_mins = mins - 1;
-    this.setState({ time: current_mins })
+    // this.setState({ time: current_mins });
     seconds--;
     if (seconds > 0) {
       setTimeout (tick, 1000);
@@ -19,19 +19,22 @@ const runCountdown = (minutes_to_count) => {
       }
     }
   }
+  tick();
 }
 
 class CountdownClock extends React.Component {
-  state = {timerTime: 1};
-
-  componentDidMount(){
-      runCountdown(this.state.timerTime);
-      var thisTime = (this.state.timerTime--);
-      this.setState({ time: thisTime})
+  constructor(props){
+    super(props);
   }
+
+  // componentDidMount(){
+      // runCountdown(this.state.timerTime);
+      // var thisTime = (this.state.timerTime--);
+      // this.setState({ time: thisTime});
+  // }
   render(){
     return(
-      <div className="clockFace">{this.state.timerTime}</div>
+      <div className="clockFace">{this.props.time}</div>
     )
   }
 };
