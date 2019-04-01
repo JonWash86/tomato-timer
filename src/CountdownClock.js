@@ -27,11 +27,6 @@ class CountdownClock extends React.Component {
     super(props);
   }
 
-  // componentDidMount(){
-      // runCountdown(this.state.timerTime);
-      // var thisTime = (this.state.timerTime--);
-      // this.setState({ time: thisTime});
-  // }
   render(){
     return(
       <div className="clockFace">{this.props.time}</div>
