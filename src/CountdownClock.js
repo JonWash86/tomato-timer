@@ -29,7 +29,7 @@ class CountdownClock extends React.Component {
 
   render(){
     return(
-      <div className="clockFace">{this.props.time}</div>
+      <div className="clockFace">{this.props.mins}:{this.props.secs}</div>
     )
   }
 };
