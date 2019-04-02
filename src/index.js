@@ -8,6 +8,8 @@ class App extends React.Component {
 
   // this function automatically displays the current time on an interval, mainly added to test displaying a timecode on the tomato.
   componentDidMount() {
+    this.setState({ mins: (this.state.mins - 1), secs:'19' });
+
     this.runTimer();
   }
 
@@ -30,13 +32,16 @@ class App extends React.Component {
 
       }
     }, 1000)
-    this.setState({ mins: (this.state.mins - 1), secs:'19' });
   }
 
   render(){
-
-    return(
-  <CountdownClock mins={this.state.mins} secs={this.state.secs}/>);
+    return(<div>
+      <CountdownClock mins={this.state.mins} secs={this.state.secs} />
+      <button>Start</button>
+      <button>Pomodoro</button>
+      <button>Short Break</button>
+      </div>
+    );
   }
 }
 
