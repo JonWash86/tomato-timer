@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import CountdownClock from './CountdownClock';
+import TimerButton from './TimerButton';
 
 
 class App extends React.Component {
@@ -37,9 +38,9 @@ class App extends React.Component {
   render(){
     return(<div>
       <CountdownClock mins={this.state.mins} secs={this.state.secs} />
-      <button>Start</button>
-      <button>Pomodoro</button>
-      <button>Short Break</button>
+      <TimerButton name="Start" />
+      <TimerButton name="Pomodoro" />
+      <TimerButton name="Short Break" />
       </div>
     );
   }
