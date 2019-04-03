@@ -5,13 +5,13 @@ import TimerButton from './TimerButton';
 
 
 class App extends React.Component {
-  state = {mins: '2', secs: '00'};
+  state = {mins: '25', secs: '00'};
 
   // this function automatically displays the current time on an interval, mainly added to test displaying a timecode on the tomato.
   componentDidMount() {
-    this.setState({ mins: (this.state.mins - 1), secs:'19' });
-
-    this.runTimer();
+    // this.setState({ mins: (this.state.mins - 1), secs:'19' });
+    //
+    // this.runTimer();
   }
 
   runTimer = () => {
