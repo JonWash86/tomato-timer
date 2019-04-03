@@ -5,12 +5,13 @@ class TimerButton extends React.Component {
     super(props);
   }
 
-  fart(){
-    console.log('toot toot!')
-  };
+  onButtonClick(event){
+    event.preventDefault();
+    this.props.onSubmit();
+  }
 
   render(){
-    return( <button onClick={this.fart}>{this.props.name}</button>);
+    return( <button onClick={this.props.onClick}>{this.props.name}</button>);
   }
 }
 

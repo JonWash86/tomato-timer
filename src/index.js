@@ -14,10 +14,16 @@ class App extends React.Component {
     // this.runTimer();
   }
 
+  Bipp(){
+    console.log('a rooty ');
+  };
+
   runTimer = () => {
+    this.setState({mins: '24', secs: '59'});
     var tickTock = setInterval(() => {
-      if (this.state.mins > 0 && this.state.secs === 0 ){
-        this.setState({mins: this.state.mins - 1, secs: 59})
+      if (this.state.mins > 0 && this.state.secs == 0 ){
+        console.log('zero!');
+        this.setState({mins: this.state.mins - 1, secs: 59});
       }
       else if (this.state.mins >= 0 && this.state.secs > 0){
         var newSec = (this.state.secs - 1);
@@ -38,7 +44,7 @@ class App extends React.Component {
   render(){
     return(<div>
       <CountdownClock mins={this.state.mins} secs={this.state.secs} />
-      <TimerButton name="Start" />
+      <TimerButton name="Start" onClick={this.runTimer}/>
       <TimerButton name="Pomodoro" />
       <TimerButton name="Short Break" />
       </div>
