@@ -5,13 +5,14 @@ class TimerButton extends React.Component {
     super(props);
   }
 
-  onButtonClick(event){
+  onButtonClick(event, duration){
     event.preventDefault();
-    this.props.onSubmit();
+
+    this.props.onSubmit(duration);
   }
 
   render(){
-    return( <button onClick={this.props.onClick}>{this.props.name}</button>);
+    return( <button onClick={() => this.props.onClick(this.props.duration)}>{this.props.name}</button>);
   }
 }
 

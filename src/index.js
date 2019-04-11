@@ -18,8 +18,8 @@ class App extends React.Component {
     console.log('a rooty ');
   };
 
-  runTimer = () => {
-    this.setState({mins: '24', secs: '59'});
+  runTimer = (duration) => {
+    this.setState({mins: duration - 1, secs: '59'});
     var tickTock = setInterval(() => {
       if (this.state.mins > 0 && this.state.secs == 0 ){
         console.log('zero!');
@@ -43,8 +43,8 @@ class App extends React.Component {
 
   render(){
     return(<div>
-      <CountdownClock mins={this.state.mins} secs={this.state.secs} />
-      <TimerButton name="Start" onClick={this.runTimer}/>
+      <CountdownClock  mins={this.state.mins} secs={this.state.secs} />
+      <TimerButton duration ={'25'} name="Start" onClick={this.runTimer}/>
       <TimerButton name="Pomodoro" />
       <TimerButton name="Short Break" />
       </div>
