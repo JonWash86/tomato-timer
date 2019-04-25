@@ -45,8 +45,8 @@ class App extends React.Component {
     return(<div>
       <CountdownClock  mins={this.state.mins} secs={this.state.secs} />
       <TimerButton duration ={'25'} name="Start" onClick={this.runTimer}/>
-      <TimerButton name="Pomodoro" />
-      <TimerButton name="Short Break" />
+      <TimerButton name="Pomodoro" duration ={'25'} onClick={this.runTimer}/>
+      <TimerButton name="Short Break"duration ={'5'} onClick={this.runTimer} />
       </div>
     );
   }
