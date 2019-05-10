@@ -19,7 +19,7 @@ class App extends React.Component {
   };
 
   runTimer = (duration) => {
-    this.setState({mins: duration - 1, secs: '59'});
+    this.setState({mins: duration, secs: '00'});
     var tickTock = setInterval(() => {
       if (this.state.mins > 0 && this.state.secs == 0 ){
         console.log('zero!');
