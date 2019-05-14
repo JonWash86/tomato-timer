@@ -20,26 +20,9 @@ class App extends React.Component {
 
   runTimer = (duration) => {
     this.setState({mins: duration, secs: '00'});
-    var tickTock = setInterval(() => {
-      if (this.state.mins > 0 && this.state.secs == 0 ){
-        console.log('zero!');
-        this.setState({mins: this.state.mins - 1, secs: 59});
-      }
-      else if (this.state.mins >= 0 && this.state.secs > 0){
-        var newSec = (this.state.secs - 1);
-        if (newSec < 10){
-          newSec = ("0" + newSec);
-        }
-        this.setState({ secs: newSec});
-      }
-      if (this.state.mins === 0 && this.state.secs ===0){
-        clearInterval(tickTock);
-      }
-      else {
-
-      }
-    }, 1000)
+    // $(':button').on('click', clearInterval(tickTock));
   }
+
 
   render(){
     return(<div>
