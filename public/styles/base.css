@@ -4,16 +4,13 @@
 }
 
 body {
-  background-color: aqua;
+  background-color: #D5EFCF;
 }
 
-#table{
-  background-color: #a34a28;
-  width: 100%;
-  height: 300px;
-  position: absolute;
-  z-index: -2;
-  top: 390px;
+.statsZone {
+  height: 100px;
+  width: 50px;
+  background-color: #fff591;
 }
 
 #tomatoPic {
@@ -24,11 +21,11 @@ body {
 }
 
 .clockFace {
-  font-size: 55px;
+  font-size: 75px;
   font-family: 'clocko';
   position: absolute;
   top: calc(25% + 200px);
-  left: calc(50% - 55px);
+  left: calc(50% - 65px);
 }
 
 .controlPanel {
@@ -43,7 +40,7 @@ button {
   height: 30px;
   margin: 3px;
   border-radius: 25px;
-  background-color: green;
+  background-color: #56A649;
   color: white;
   border: none;
 }
@@ -52,4 +49,8 @@ button:hover{
   background-color: yellow;
   color: black;
   cursor: pointer;
+}
+
+button:focus{
+  outline: none;
 }
