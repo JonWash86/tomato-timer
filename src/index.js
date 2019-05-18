@@ -65,10 +65,14 @@ class App extends React.Component {
 
   render(){
     return(<div>
+      <div>
       <CountdownClock  mins={this.state.mins} secs={this.state.secs} />
+      </div>
+      <div className="controlPanel">
       <TimerButton duration ={'25'} name="Start" onClick={this.handleClick}/>
       <TimerButton name="Pomodoro" duration ={'25'} onClick={this.handleClick}/>
       <TimerButton name="Short Break" duration ={'5'} onClick={this.handleClick} />
+      </div>
       </div>
     );
   }

@@ -11,3 +11,17 @@
   top: calc(25% + 200px);
   left: calc(50% - 55px);
 }
+
+.controlPanel {
+  position: absolute;
+  background-color: red;
+  top: calc(25% + 360px);
+  left: calc(50% - 235px);
+
+}
+
+button {
+  width: 150px;
+  height: 30px;
+  margin: 3px;
+}
