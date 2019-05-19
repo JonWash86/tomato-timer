@@ -4,20 +4,17 @@ import CountdownClock from './CountdownClock';
 import TimerButton from './TimerButton';
 import StatsZone from './StatsZone';
 
-
 class App extends React.Component {
-  state = {mins: '25', secs: '00', tickTock: null};
-
-  componentDidMount() {
-    // this.setState({ mins: (this.state.mins - 1), secs:'19' });
-    //
-    // this.runTimer();
-  }
-
+  state = {
+    mins: '25',
+    secs: '00',
+    tickTock: null,
+    poms: 0,
+    shorts: 0,
+    longs: 0
+  };
 
   handleClick = (duration) => {
-    document.title = "New title!";
-    console.log(duration);
     if(!this.state.tickTock){
       this.runTimer(duration);
     }
@@ -29,6 +26,11 @@ class App extends React.Component {
 
   stopTimer = () => {
 
+  }
+
+  playBeep = () => {
+    var beep = new Audio('./sounds/beep.mp3');
+    beep.play();
   }
 
   refreshTitle = (mins, secs) => {
@@ -50,7 +52,8 @@ class App extends React.Component {
           this.setState({ secs: newSec});
           this.refreshTitle(this.state.mins, this.state.secs);
         }
-        else if (this.state.mins === 0 && this.state.secs ===0){
+        else {
+          this.playBeep();
           clearInterval(this.state.tickTock);
         }
       }, 1000)
@@ -67,7 +70,7 @@ class App extends React.Component {
       <TimerButton name="Short Break" duration ={'5'} onClick={this.handleClick} />
       <TimerButton name="Long Break" duration ={'10'} onClick={this.handleClick} />
       </div>
-      <StatsZone />
+      <StatsZone poms={this.state.poms} shorts={this.state.shorts} longs={this.state.longs}/>
       </div>
     );
   }

@@ -9,8 +9,15 @@ body {
 
 .statsZone {
   height: 100px;
-  width: 50px;
-  background-color: #fff591;
+  width: 150px;
+  background-color: #D56D46;
+  box-shadow: 5px 5px #fff591;
+  border-radius: 0px 5px 5px 0px;
+  left: 0px;
+  padding-left: 15px;
+  padding-top: 15px;
+  margin-top: 40px;
+  position: absolute;
 }
 
 #tomatoPic {
@@ -22,10 +29,16 @@ body {
 
 .clockFace {
   font-size: 75px;
+  width: 200px;
+  background-color: white;
+  background:rgba(255,255,255,0.5);
+  text-align: center;
   font-family: 'clocko';
   position: absolute;
   top: calc(25% + 200px);
-  left: calc(50% - 65px);
+  left: calc(50% - 105px);
+  border-radius: 25px;
+  padding-top: 8px;
 }
 
 .controlPanel {
@@ -43,10 +56,11 @@ button {
   background-color: #56A649;
   color: white;
   border: none;
+  box-shadow: 4px 4px 4px grey;
 }
 
 button:hover{
-  background-color: yellow;
+  background-color: #fff591;
   color: black;
   cursor: pointer;
 }
