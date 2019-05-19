@@ -34,7 +34,19 @@ class App extends React.Component {
   }
 
   refreshTitle = (mins, secs) => {
-    document.title = mins + ":" + secs
+    document.title = mins + ':' + secs
+  }
+
+  refreshStats = (duration) => {
+    console.log(duration);
+    if (duration == 25){
+      console.log('pom!')
+      this.setState({poms: this.state.poms+1})
+    } else if (duration == 5){
+      this.setState({shorts: this.state.shorts+1})
+    } else if (duration == 10){
+      this.setState({longs: this.state.longs+1})
+    }
   }
 
   runTimer = (duration) => {
@@ -54,6 +66,7 @@ class App extends React.Component {
         }
         else {
           this.playBeep();
+          this.refreshStats(duration);
           clearInterval(this.state.tickTock);
         }
       }, 1000)
