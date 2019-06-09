@@ -1,13 +1,12 @@
 {
   "name": "tomato-timer",
-
   "engines": {
     "node": "8.12.0"
   },
-
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "classnames": "^2.2.6",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
     "react-scripts": "2.1.8"

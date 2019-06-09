@@ -1,18 +1,20 @@
 import React from 'react';
+import classnames from 'classnames';
 
 class TimerButton extends React.Component {
   constructor(props){
     super(props);
+    this.state = {active: false};
   }
 
-  onButtonClick(event, duration){
-    event.preventDefault();
-
-    this.props.onSubmit(duration);
+  handleClick = () => {
+    this.setState({active: true});
+    this.props.onClick(this.props.duration, this.props.name);
   }
 
   render(){
-    return( <button onClick={() => this.props.onClick(this.props.duration)}>{this.props.name}</button>);
+    let classes = classnames('timerButton', {active: this.state.active});
+    return( <div className="buttonBorder"><button className={classes}  id={this.props.name} onClick={this.handleClick}>{this.props.name}</button></div>);
   }
 }
 

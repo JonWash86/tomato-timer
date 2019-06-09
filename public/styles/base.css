@@ -55,8 +55,22 @@ hr {
 .controlPanel {
   position: absolute;
   top: calc(25% + 360px);
-  left: calc(50% - 235px);
+  left: calc(50% - 245px);
 
+}
+
+.buttonBorder {
+  display:inline-block;
+  border: solid transparent;
+  border-radius: 25px;
+}
+
+.buttonBorder:hover{
+  border: solid #56A649;
+}
+
+.active{
+  background-color: #fff591;
 }
 
 button {
@@ -67,12 +81,12 @@ button {
   background-color: #56A649;
   color: white;
   border: none;
-  box-shadow: 4px 4px 4px grey;
+  /* box-shadow: 4px 4px 4px grey; */
 }
 
 button:hover{
-  background-color: #fff591;
-  color: black;
+  /* background-color: #fff591;
+  color: black; */
   cursor: pointer;
 }
 
@@ -93,5 +107,5 @@ button:focus{
 }
 
 #questionsMark:hover{
-  
+
 }
