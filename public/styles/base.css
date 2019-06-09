@@ -71,6 +71,11 @@ hr {
 
 .active{
   background-color: #fff591;
+  color: black;
+}
+
+.bordered {
+  border: solid #56A649;
 }
 
 button {

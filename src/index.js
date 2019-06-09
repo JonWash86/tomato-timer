@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import classnames from 'classnames';
+
 import CountdownClock from './CountdownClock';
 import TimerButton from './TimerButton';
 import StatsZone from './StatsZone';
@@ -15,7 +17,6 @@ class App extends React.Component {
   };
 
   handleClick = (duration, name) => {
-    console.log(name);
     if(!this.state.tickTock){
       this.runTimer(duration);
     }

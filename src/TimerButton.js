@@ -8,13 +8,19 @@ class TimerButton extends React.Component {
   }
 
   handleClick = () => {
+    let buttonClasses = document.querySelector('.timerButton');
+    // console.log(buttonClasses.classList);
+    // buttonClasses.classList.remove('active');
+    buttonClasses.setState({ active: false})
+
     this.setState({active: true});
     this.props.onClick(this.props.duration, this.props.name);
   }
 
   render(){
     let classes = classnames('timerButton', {active: this.state.active});
-    return( <div className="buttonBorder"><button className={classes}  id={this.props.name} onClick={this.handleClick}>{this.props.name}</button></div>);
+    let metaClasses = classnames('buttonBorder', {bordered: this.state.active})
+    return( <div className={metaClasses} ><button className={classes}  id={this.props.name} onClick={this.handleClick}>{this.props.name}</button></div>);
   }
 }
 
