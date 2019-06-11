@@ -8,10 +8,9 @@ class TimerButton extends React.Component {
   }
 
   handleClick = () => {
-    let buttonClasses = document.querySelector('.timerButton');
+    // let buttonClasses = document.querySelector('.timerButton');
     // console.log(buttonClasses.classList);
     // buttonClasses.classList.remove('active');
-    buttonClasses.setState({ active: false})
 
     this.setState({active: true});
     this.props.onClick(this.props.duration, this.props.name);
