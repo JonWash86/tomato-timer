@@ -14,6 +14,7 @@ class App extends React.Component {
     poms: 0,
     shorts: 0,
     longs: 0,
+    activeTicker: null
   };
 
   handleClick = (duration, name) => {
@@ -22,7 +23,7 @@ class App extends React.Component {
     }
     else{
       clearInterval(this.state.tickTock);
-      this.runTimer(duration);
+      this.runTimer(duration, name);
     };
   }
 
@@ -51,8 +52,12 @@ class App extends React.Component {
     }
   }
 
-  runTimer = (duration) => {
+  runTimer = (duration, name) => {
     // this.addClass("active");
+
+    this.setState({ activeTicker: name });
+    console.log(this.state.activeTicker);
+
     this.setState({mins: duration, secs: '00', tickTock:
     setInterval(() => {
         if (this.state.mins > 0 && this.state.secs == 0 ){
