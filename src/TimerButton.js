@@ -5,6 +5,7 @@ class TimerButton extends React.Component {
   constructor(props){
     super(props);
     this.state = {active: false};
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick = () => {
@@ -14,7 +15,7 @@ class TimerButton extends React.Component {
 
   render(){
 
-    
+
 
     let classes = classnames('timerButton', {active: this.state.active});
     let metaClasses = classnames('buttonBorder', {bordered: this.state.active})

@@ -18,8 +18,14 @@ class App extends React.Component {
   };
 
   handleClick = (duration, name) => {
+
+    console.log(this.state.activeTicker);
+
+    this.setState({ activeTicker: name });
+    console.log(this.state.activeTicker);
+
     if(!this.state.tickTock){
-      this.runTimer(duration);
+      this.runTimer(duration, name);
     }
     else{
       clearInterval(this.state.tickTock);
@@ -27,7 +33,7 @@ class App extends React.Component {
     };
   }
 
-  stopTimer = () => {
+  pauseTimer = () => {
 
   }
 
@@ -43,7 +49,6 @@ class App extends React.Component {
   refreshStats = (duration) => {
     console.log(duration);
     if (duration == 25){
-      console.log('pom!')
       this.setState({poms: this.state.poms+1})
     } else if (duration == 5){
       this.setState({shorts: this.state.shorts+1})
@@ -54,9 +59,10 @@ class App extends React.Component {
 
   runTimer = (duration, name) => {
     // this.addClass("active");
-
-    this.setState({ activeTicker: name });
-    console.log(this.state.activeTicker);
+    // console.log(this.state.activeTicker);
+    //
+    // this.setState({ activeTicker: name });
+    // console.log(this.state.activeTicker);
 
     this.setState({mins: duration, secs: '00', tickTock:
     setInterval(() => {
