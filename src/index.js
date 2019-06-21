@@ -19,10 +19,9 @@ class App extends React.Component {
 
   handleClick = (duration, name) => {
 
-    console.log(this.state.activeTicker);
-
     this.setState({ activeTicker: name });
-    console.log(this.state.activeTicker);
+    var ticktick = this.state.activeTicker;
+    console.log(ticktick);
 
     if(!this.state.tickTock){
       this.runTimer(duration, name);
