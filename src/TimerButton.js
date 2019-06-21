@@ -15,9 +15,9 @@ class TimerButton extends React.Component {
   }
 
   render(){
-    let classes = classnames('timerButton', {active: this.state.active});
+    // let classes = classnames('timerButton', {active: this.state.active});
     let metaClasses = classnames('buttonBorder', {bordered: this.state.active})
-    return( <div className={metaClasses} ><button className={classes}  id={this.props.name} onClick={this.handleClick}>{this.props.name}</button></div>);
+    return( <div className={metaClasses} ><button className={this.props.className}  id={this.props.name} onClick={this.handleClick}>{this.props.name}</button></div>);
   }
 }
 

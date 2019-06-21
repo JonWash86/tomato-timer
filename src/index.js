@@ -19,6 +19,8 @@ class App extends React.Component {
 
   handleClick = (duration, name) => {
 
+    this.highlightActiveButton(duration);
+
     this.setState({ activeTicker: name });
     var ticktick = this.state.activeTicker;
     console.log(ticktick);
@@ -34,6 +36,23 @@ class App extends React.Component {
 
   pauseTimer = () => {
 
+  }
+
+  highlightActiveButton = (duration) => {
+    let allButts = document.getElementsByClassName('timerButton');
+    console.log(allButts);
+
+    for (var i = 0; i < allButts.length; i++){
+      allButts[i].classList.remove('active');
+    }
+
+    if (duration == 25){
+      allButts[0].classList.add('active');
+    } else if (duration == 5){
+      allButts[1].classList.add('active');
+    } else if (duration == 10){
+      allButts[2].classList.add('active');
+    }
   }
 
   playBeep = () => {
@@ -57,11 +76,6 @@ class App extends React.Component {
   }
 
   runTimer = (duration, name) => {
-    // this.addClass("active");
-    // console.log(this.state.activeTicker);
-    //
-    // this.setState({ activeTicker: name });
-    // console.log(this.state.activeTicker);
 
     this.setState({mins: duration, secs: '00', tickTock:
     setInterval(() => {
@@ -87,14 +101,19 @@ class App extends React.Component {
   }
 
   render(){
+    // let buttonClasses = classNames(
+    //   'timerButton',
+    //   'twerk'
+    // );
+
     return(<div>
       <div>
       <CountdownClock  mins={this.state.mins} secs={this.state.secs} />
       </div>
       <div className="controlPanel">
-      <TimerButton name="Pomodoro" duration ={'25'} onClick={this.handleClick}/>
-      <TimerButton name="Short Break" duration ={'5'} onClick={this.handleClick} />
-      <TimerButton name="Long Break" duration ={'10'} onClick={this.handleClick} />
+      <TimerButton className={`timerButton`} name="Pomodoro" duration ={'25'} onClick={this.handleClick}/>
+      <TimerButton className={`timerButton`} name="Short Break" duration ={'5'} onClick={this.handleClick} />
+      <TimerButton className={`timerButton`} name="Long Break" duration ={'10'} onClick={this.handleClick} />
       </div>
       <StatsZone poms={this.state.poms} shorts={this.state.shorts} longs={this.state.longs}/>
       </div>
