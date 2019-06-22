@@ -18,13 +18,10 @@ class App extends React.Component {
   };
 
   handleClick = (duration, name) => {
-
     this.highlightActiveButton(duration);
-
     this.setState({ activeTicker: name });
     var ticktick = this.state.activeTicker;
     console.log(ticktick);
-
     if(!this.state.tickTock){
       this.runTimer(duration, name);
     }
@@ -40,18 +37,22 @@ class App extends React.Component {
 
   highlightActiveButton = (duration) => {
     let allButts = document.getElementsByClassName('timerButton');
-    console.log(allButts);
+    let allBords = document.getElementsByClassName('buttonBorder');
 
     for (var i = 0; i < allButts.length; i++){
       allButts[i].classList.remove('active');
+      allBords[i].classList.remove('bordered');
     }
 
     if (duration == 25){
       allButts[0].classList.add('active');
+      allBords[0].classList.add('bordered');
+
     } else if (duration == 5){
-      allButts[1].classList.add('active');
+      allButts[1].classList.add('active');      allBords[1].classList.add('bordered');
+
     } else if (duration == 10){
-      allButts[2].classList.add('active');
+      allButts[2].classList.add('active');      allBords[2].classList.add('bordered');
     }
   }
 
