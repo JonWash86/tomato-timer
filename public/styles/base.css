@@ -113,4 +113,11 @@ button:focus{
 
 #questionsMark:hover{
   cursor: pointer;
+  right: 23px;
+  bottom:23px;
+  box-shadow: 2px 3px #D56D46;
+}
+
+#infoZone{
+  display: none;
 }
