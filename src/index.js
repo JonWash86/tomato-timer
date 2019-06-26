@@ -4,6 +4,7 @@ import classnames from 'classnames';
 
 import CountdownClock from './CountdownClock';
 import TimerButton from './TimerButton';
+import PauseButton from './PauseButton';
 import StatsZone from './StatsZone';
 
 class App extends React.Component {
@@ -117,6 +118,7 @@ class App extends React.Component {
       <TimerButton className={`timerButton`} name="Long Break" duration ={'10'} onClick={this.handleClick} />
       </div>
       <StatsZone poms={this.state.poms} shorts={this.state.shorts} longs={this.state.longs}/>
+      <PauseButton />
       </div>
     );
   }
