@@ -11,7 +11,7 @@ class PauseButton extends React.Component {
 
   render(){
     return(
-      <button onClick={this.pauseTimer}>Pause</button>
+      <button className={this.props.className}  onClick={this.pauseTimer}>Pause</button>
     );
   }
 };

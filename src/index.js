@@ -15,20 +15,17 @@ class App extends React.Component {
     poms: 0,
     shorts: 0,
     longs: 0,
-    activeTicker: null
+    paused: false
   };
 
   handleClick = (duration, name) => {
     this.highlightActiveButton(duration);
-    this.setState({ activeTicker: name });
-    var ticktick = this.state.activeTicker;
-    console.log(ticktick);
     if(!this.state.tickTock){
-      this.runTimer(duration, name);
+      this.runTimer(duration, "00", name);
     }
     else{
       clearInterval(this.state.tickTock);
-      this.runTimer(duration, name);
+      this.runTimer(duration, "00", name);
     };
   }
 
@@ -73,9 +70,8 @@ class App extends React.Component {
     }
   }
 
-  runTimer = (duration, name) => {
-
-    this.setState({mins: duration, secs: '00', tickTock:
+  runTimer = (duration, secs, name) => {
+    this.setState({mins: duration, secs: secs, tickTock:
     setInterval(() => {
         if (this.state.mins > 0 && this.state.secs == 0 ){
           this.setState({mins: this.state.mins - 1, secs: 59});
@@ -99,15 +95,22 @@ class App extends React.Component {
   }
 
   pauseTimer = () => {
-    clearInterval(this.state.tickTock);
+    let pauseButton = document.getElementsByClassName('pauseButton');
+    console.log(pauseButton);
+    console.log(this.state.paused);
+    if (this.state.paused === false){
+      pauseButton[0].classList.add('active');
+      pauseButton[0].classList.add('bordered');
+      this.setState({paused: true});
+      clearInterval(this.state.tickTock);
+    }
+    else {
+      this.setState({paused: false});
+      this.runTimer(this.state.mins, this.state.secs)
+    }
   }
 
   render(){
-    // let buttonClasses = classNames(
-    //   'timerButton',
-    //   'twerk'
-    // );
-
     return(<div>
       <div>
       <CountdownClock  mins={this.state.mins} secs={this.state.secs} />
@@ -118,7 +121,7 @@ class App extends React.Component {
       <TimerButton className={`timerButton`} name="Long Break" duration ={'10'} onClick={this.handleClick} />
       </div>
       <StatsZone poms={this.state.poms} shorts={this.state.shorts} longs={this.state.longs}/>
-      <PauseButton onClick={this.pauseTimer}/>
+      <PauseButton className={`pauseButton`} onClick={this.pauseTimer}/>
       </div>
     );
   }
