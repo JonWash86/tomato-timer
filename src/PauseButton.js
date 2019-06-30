@@ -5,9 +5,13 @@ class PauseButton extends React.Component {
   //   super(props);
   // }
 
+  pauseTimer = () => {
+    this.props.onClick();
+  }
+
   render(){
     return(
-      <button>Pause</button>
+      <button onClick={this.pauseTimer}>Pause</button>
     );
   }
 };
