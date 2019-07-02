@@ -32,6 +32,7 @@ class App extends React.Component {
   highlightActiveButton = (duration) => {
     let allButts = document.getElementsByClassName('timerButton');
     let allBords = document.getElementsByClassName('buttonBorder');
+    console.log(allButts);
 
     for (var i = 0; i < allButts.length; i++){
       allButts[i].classList.remove('active');
@@ -96,8 +97,6 @@ class App extends React.Component {
 
   pauseTimer = () => {
     let pauseButton = document.getElementsByClassName('pauseButton');
-    console.log(pauseButton);
-    console.log(this.state.paused);
     if (this.state.paused === false){
       pauseButton[0].classList.add('active');
       pauseButton[0].classList.add('bordered');
@@ -106,7 +105,9 @@ class App extends React.Component {
     }
     else {
       this.setState({paused: false});
-      this.runTimer(this.state.mins, this.state.secs)
+      this.runTimer(this.state.mins, this.state.secs);
+      pauseButton[0].classList.remove('active');
+      pauseButton[0].classList.remove('bordered');
     }
   }
 
@@ -121,7 +122,7 @@ class App extends React.Component {
       <TimerButton className={`timerButton`} name="Long Break" duration ={'10'} onClick={this.handleClick} />
       </div>
       <StatsZone poms={this.state.poms} shorts={this.state.shorts} longs={this.state.longs}/>
-      <PauseButton className={`pauseButton`} onClick={this.pauseTimer}/>
+      <PauseButton className={`pauseButton timerButton`} onClick={this.pauseTimer}/>
       </div>
     );
   }
