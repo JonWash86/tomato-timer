@@ -89,6 +89,17 @@ button {
   /* box-shadow: 4px 4px 4px grey; */
 }
 
+.pauseButton {
+  width: 375px;
+  position: relative;
+}
+
+#pauseBorder {
+  top: 5px;
+  position: relative;
+  left: 50px;
+}
+
 button:hover{
   /* background-color: #fff591;
   color: black; */

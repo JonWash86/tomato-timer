@@ -97,9 +97,12 @@ class App extends React.Component {
 
   pauseTimer = () => {
     let pauseButton = document.getElementsByClassName('pauseButton');
+    let pauseBorder = document.getElementById('pauseBorder');
+    console.log(pauseBorder);
+
     if (this.state.paused === false){
       pauseButton[0].classList.add('active');
-      pauseButton[0].classList.add('bordered');
+      pauseBorder[0].classList.add('bordered');
       this.setState({paused: true});
       clearInterval(this.state.tickTock);
     }
@@ -107,7 +110,7 @@ class App extends React.Component {
       this.setState({paused: false});
       this.runTimer(this.state.mins, this.state.secs);
       pauseButton[0].classList.remove('active');
-      pauseButton[0].classList.remove('bordered');
+      pauseBorder[0].classList.remove('bordered');
     }
   }
 
@@ -119,10 +122,10 @@ class App extends React.Component {
       <div className="controlPanel">
       <TimerButton className={`timerButton`} name="Pomodoro" duration ={'25'} onClick={this.handleClick}/>
       <TimerButton className={`timerButton`} name="Short Break" duration ={'5'} onClick={this.handleClick} />
-      <TimerButton className={`timerButton`} name="Long Break" duration ={'10'} onClick={this.handleClick} />
+      <TimerButton className={`timerButton`} name="Long Break" duration ={'10'} onClick={this.handleClick} /><br />
+      <PauseButton className={`pauseButton timerButton`} onClick={this.pauseTimer}/>
       </div>
       <StatsZone poms={this.state.poms} shorts={this.state.shorts} longs={this.state.longs}/>
-      <PauseButton className={`pauseButton timerButton`} onClick={this.pauseTimer}/>
       </div>
     );
   }
